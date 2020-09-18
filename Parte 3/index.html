@@ -31,6 +31,15 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 
 // CREA TU FUNCION challenge1 aqui 
 
+function challenge1(){
+    var num = prompt("¿Cuantos botones necsitas?");
+    var divDummy = document.getElementById("dummy");
+    for(i = 0; i < num; i++){
+        var button = document.createElement("button");
+        button.textContent = nombres[i];
+        divDummy.appendChild(button);
+    }
+}
 
 
 // ************** PARTE 2    **************
@@ -42,6 +51,12 @@ Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los n
 
 // CREA TU FUNCION challenge2 2 aquí.
 
+function challenge2(){
+    for(i = 0; i < nombres.length; i++){
+        console.log(nombres[i].toUpperCase());
+    }
+}
+
 
 
 // ************** PARTE 3    **************
@@ -49,6 +64,7 @@ Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los n
 /**
 
 A) Escribe un constructor que te permita generar objetos de tipo "Dog" que reciba 3 parametros
+
 
 1) Nombre
 2) Color
@@ -68,9 +84,24 @@ Invoca la función para validar su funcionalidad.
 
 */
 
+function Dog(nombre, color, raza) {
+    this.nombre = nombre;
+    this.color = color;
+    this.raza = raza;
+    this.printInfo = function() {console.log(`Nombre: ${this.nombre} , De color: ${this.color}, Raza: ${this.raza}`);};
+}
 
 
+function challenge3(){
+    var perroUno = new Dog("Fido", "cafe", "poodle");
+    var perroDos = new Dog("Fido2", "negro", "alemán");
+    var perroTres = new Dog("Fido3", "blanco", "chihuahua");
 
+    perroUno.printInfo();
+    perroDos.printInfo();
+    perroTres.printInfo();
+
+}
 
 </script>
 
@@ -80,7 +111,7 @@ Invoca la función para validar su funcionalidad.
 
     <button onclick="challenge1()">Challenge 1</button>
     <button onclick="challenge2()">Challenge 2</button>
-    <button onclick="challenge3()">Challenge 2</button>
+    <button onclick="challenge3()">Challenge 3</button>
 
   
 <div id = "dummy">
